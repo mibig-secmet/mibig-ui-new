@@ -1,0 +1,69 @@
+@define-mixin secmet $fg, $bg, $highlight: orangered {
+    background-color: $bg;
+    color: $fg;
+    a, a:link, a:visited {
+        color: $fg;
+    }
+    rect& {
+        fill: $bg;
+        stroke: $highlight;
+    }
+    &.active {
+        border-color: $highlight;
+        border-width: 2px;
+        border-style: solid;
+    }
+    &:hover {
+        @mixin-content;
+    }
+}
+
+@define-mixin hydrocarbon {
+    @mixin secmet white, purple{
+        background-color: color-mod(purple tint(15%))
+    };
+}
+
+.hybrid {
+    @mixin secmet midnightblue, lightsteelblue, midnightblue{
+        background-color: color-mod(lightsteelblue tint(15%))
+    };
+}
+
+.pks {
+    @mixin secmet purple, sandybrown, purple{
+        background-color: color-mod(sandybrown tint(15%))
+    };
+}
+
+.ripp {
+    @mixin secmet white, royalblue{
+        background-color: color-mod(royalblue tint(15%))
+    };
+}
+
+.nrps {
+    @mixin secmet white, seagreen{
+        background-color: color-mod(seagreen tint(15%))
+    };
+}
+
+.terpene {
+    @mixin hydrocarbon;
+}
+
+.other {
+    @mixin secmet lightsteelblue, midnightblue{
+        background-color: color-mod(midnightblue tint(15%))
+    };
+}
+
+.saccharide {
+    @mixin secmet black, burlywood, black{
+        background-color: color-mod(burlywood tint(15%))
+    };
+}
+
+.alkaloid {
+    @mixin hydrocarbon;
+}
