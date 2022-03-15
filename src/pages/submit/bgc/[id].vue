@@ -3,66 +3,105 @@
 		<h1 class="py-6 mb-4 text-4xl font-semibold text-gray-700 border-b border-gray-300">
 			Submit an MIBiG entry
 		</h1>
-		<div v-if="entry">
+		<div v-if="entry" class="flex space-x-10">
 			<form action="" method="post">
-				<h2 class="text-lg">
+				<h2 class="text-gray-700 text-sm font-bold mb-1">
 					{{ entry.cluster.mibig_accession }} - {{ entry.cluster.loci.accession }} -
 					{{ compoundList }}
 				</h2>
 				<div>
 					<label for=""></label>
-					<input type="text" name="" id="" />
+					<input type="text" name="" id="" class="border rounded w-full" />
 				</div>
 			</form>
-		</div>
-		<div class="mt-8">
-			<h3 class="text-lg">Databases:</h3>
-			<select name="" id="" class="w-80"></select>
-		</div>
-		<div class="mt-8">
-			<h3 class="text-lg">Identifier:</h3>
-			<input v-model="Identifier" placeholder="add identifier" class="border w-80" />
-		</div>
-		<div class="mt-8 flex gap-x-5">
-			<div>
-				<span><h3>Contains Whole Cluster ?</h3></span>
-			</div>
-			<div class="px-10 space-x-4">
-				<input
-					type="radio"
-					id="yes"
-					value="yes"
-					v-model="cluster"
-					checked
-					class="cursor-pointer"
-				/>
-				<label for="yes">Yes</label>
-				<input type="radio" id="" value="no" v-model="cluster" class="cursor-pointer" />
-				<label for="no">No</label>
-				<input
-					type="radio"
-					id=""
-					value="unknown"
-					v-model="cluster"
-					class="cursor-pointer"
-				/>
-				<label for="unknown">Yes</label>
+
+			<div class="mb-4">
+				<label class="text-gray-700 text-sm font-bold mb-2" for="locus"> Locus : </label>
+
+				<div class="flex rounded-md shadow">
+					<router-link
+						class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md hover:bg-blue-500 bg-blue-700 px-3 text-white"
+						to="/submit/locus"
+					>
+						AB0123456
+					</router-link>
+				</div>
 			</div>
 		</div>
-		<div class="mt-8">
-			<div>
-				<span><h3>Evidence for locus-compound link :</h3></span>
-				<span
-					class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-white bg-blue-600 rounded-full mb-2"
-					>Add :</span
-				>
+		<div>
+			<h2>Biosynthetic classes :</h2>
+			<div class="mb-4 flex space-x-10">
 				<input
-					class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="locus"
 					type="text"
-					placeholder="Add link here"
+					placeholder="MRP"
+				/>
+				<input
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="biosynthentic"
+					type="text"
+					placeholder="Sacharrides"
+				/>
+				<button
+					class="cursor-pointer hover:bg-blue-500 bg-blue-700 px-3 text-white rounded-full"
+				>
+					Add
+				</button>
+			</div>
+		</div>
+		<div>
+			<h2>Compounds :</h2>
+			<div class="mb-4 flex space-x-10">
+				<input
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="compounds"
+					type="text"
+					placeholder="MRP"
+				/>
+				<button
+					class="cursor-pointer bg-blue-700 px-3 text-white rounded-full hover:bg-blue-500"
+				>
+					Add
+				</button>
+			</div>
+		</div>
+		<div>
+			<h2>Organism Name :</h2>
+			<div class="mb-4 flex space-x-10">
+				<input
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="locus"
+					type="text"
+					placeholder="streptomyces"
 				/>
 			</div>
 		</div>
+		<div>
+			<h2>NCBI Tax ID :</h2>
+			<div class="mb-4 flex space-x-10">
+				<input
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="locus"
+					type="text"
+					placeholder="NCBI Tax ID"
+				/>
+			</div>
+		</div>
+		<div>
+			<h2>Publications :</h2>
+			<div class="mb-4 flex space-x-10">
+				<input
+					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="compounds"
+					type="text"
+					placeholder="PubMed 1234567"
+				/>
+			</div>
+		</div>
+		<button class="cursor-pointer bg-blue-700 p-2 hover:bg-blue-500 text-white rounded-full">
+			Submit
+		</button>
 	</div>
 </template>
 
