@@ -1,0 +1,64 @@
+{
+	"data": [
+		{
+			"accession": "acc",
+			"compounds": [{ "name": "Examplomycin 1" }],
+			"locus": {
+				"accession": {
+					"database": "NCBI",
+					"identifier": "AB_012345.1"
+				},
+				"completeness": "complete",
+				"evidences": ["Sequence-based prediction"],
+				"mixs_compliant": false
+			},
+			"organism_name": "Examplomyces sample",
+			"ncbi_taxid": 123456
+		},
+		{
+			"accession": "acc",
+			"compounds": [{ "name": "Examplomycin 2" }],
+			"locus": {
+				"accession": {
+					"database": "NCBI",
+					"identifier": "AB_012345.2"
+				},
+				"completeness": "not complete",
+				"evidences": ["Sequence-based prediction"],
+				"mixs_compliant": false
+			},
+			"organism_name": "Examplomyces sample two",
+			"ncbi_taxid": 123457
+		},
+		{
+			"accession": "acc",
+			"compounds": [{ "name": "Examplomycin 3" }],
+			"locus": {
+				"accession": {
+					"database": "NCBI",
+					"identifier": "AB_012345.3"
+				},
+				"completeness": "complete",
+				"evidences": ["Sequence-based prediction"],
+				"mixs_compliant": true
+			},
+			"organism_name": "Examplomyces sample three",
+			"ncbi_taxid": 123458
+		},
+		{
+			"accession": "acc",
+			"compounds": [{ "name": "Examplomycin 4" }],
+			"locus": {
+				"accession": {
+					"database": "NCBI",
+					"identifier": "AB_012345.4"
+				},
+				"completeness": "complete",
+				"evidences": ["Sequence-based prediction"],
+				"mixs_compliant": false
+			},
+			"organism_name": "Examplomyces sample four",
+			"ncbi_taxid": 123459
+		}
+	]
+}

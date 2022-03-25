@@ -2745,6 +2745,11 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
+"vue-material-design-icons@^5.0.0":
+  "integrity" "sha512-lYSJFW/TyQqmg7MvUbEB8ua1mwWy/v8qve7QJuA/UWUAXC4/yVUdAm4pg/sM9+k5n7VLckBv6ucOROuGBsGPDQ=="
+  "resolved" "https://registry.npmjs.org/vue-material-design-icons/-/vue-material-design-icons-5.0.0.tgz"
+  "version" "5.0.0"
+
 "vue-router@4":
   "integrity" "sha512-YbPf6QnZpyyWfnk7CUt2Bme+vo7TLfg1nGZNkvYqKYh4vLaFw6Gn8bPGdmt5m4qrGnKoXLqc4htAsd3dIukICA=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.0.10.tgz"

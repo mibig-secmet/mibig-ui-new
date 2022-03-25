@@ -13,95 +13,83 @@
 					<label for=""></label>
 					<input type="text" name="" id="" class="border rounded w-full" />
 				</div>
-			</form>
+				<div class="mb-4">
+					<label class="text-gray-700 text-sm font-bold mb-2" for="locus">
+						Locus :
+					</label>
 
-			<div class="mb-4">
-				<label class="text-gray-700 text-sm font-bold mb-2" for="locus"> Locus : </label>
+					<div class="flex rounded-md shadow">
+						<router-link
+							class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md hover:bg-blue-500 bg-blue-700 px-3 text-white"
+							to="/submit/locus"
+						>
+							AB0123456
+						</router-link>
+					</div>
+					<div>
+						<h2>Biosynthetic classes :</h2>
 
-				<div class="flex rounded-md shadow">
-					<router-link
-						class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md hover:bg-blue-500 bg-blue-700 px-3 text-white"
-						to="/submit/locus"
-					>
-						AB0123456
-					</router-link>
+						<div class="mb-4 flex space-x-10">
+							<input
+								class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="locus"
+								type="text"
+								placeholder="MRP"
+							/>
+							<input
+								class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="biosynthentic"
+								type="text"
+								placeholder="Sacharrides"
+							/>
+							<button
+								class="cursor-pointer hover:bg-blue-500 bg-blue-700 px-3 text-white rounded-full"
+							>
+								Add
+							</button>
+						</div>
+					</div>
+					<div>
+						<h2>Organism Name :</h2>
+						<div class="mb-4 flex space-x-10">
+							<input
+								class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="locus"
+								type="text"
+								placeholder="streptomyces"
+							/>
+						</div>
+					</div>
+					<div>
+						<h2>NCBI Tax ID :</h2>
+						<div class="mb-4 flex space-x-10">
+							<input
+								class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="locus"
+								type="text"
+								placeholder="NCBI Tax ID"
+							/>
+						</div>
+					</div>
+					<div>
+						<h2>Publications :</h2>
+						<div class="mb-4 flex space-x-10">
+							<input
+								class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="compounds"
+								type="text"
+								placeholder="PubMed 1234567"
+							/>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div>
-			<h2>Biosynthetic classes :</h2>
-			<div class="mb-4 flex space-x-10">
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="locus"
-					type="text"
-					placeholder="MRP"
-				/>
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="biosynthentic"
-					type="text"
-					placeholder="Sacharrides"
-				/>
 				<button
-					class="cursor-pointer hover:bg-blue-500 bg-blue-700 px-3 text-white rounded-full"
+					class="cursor-pointer bg-blue-700 p-2 hover:bg-blue-500 text-white rounded-full"
 				>
-					Add
+					Submit
 				</button>
-			</div>
+			</form>
 		</div>
-		<div>
-			<h2>Compounds :</h2>
-			<div class="mb-4 flex space-x-10">
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="compounds"
-					type="text"
-					placeholder="MRP"
-				/>
-				<button
-					class="cursor-pointer bg-blue-700 px-3 text-white rounded-full hover:bg-blue-500"
-				>
-					Add
-				</button>
-			</div>
-		</div>
-		<div>
-			<h2>Organism Name :</h2>
-			<div class="mb-4 flex space-x-10">
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="locus"
-					type="text"
-					placeholder="streptomyces"
-				/>
-			</div>
-		</div>
-		<div>
-			<h2>NCBI Tax ID :</h2>
-			<div class="mb-4 flex space-x-10">
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="locus"
-					type="text"
-					placeholder="NCBI Tax ID"
-				/>
-			</div>
-		</div>
-		<div>
-			<h2>Publications :</h2>
-			<div class="mb-4 flex space-x-10">
-				<input
-					class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-					id="compounds"
-					type="text"
-					placeholder="PubMed 1234567"
-				/>
-			</div>
-		</div>
-		<button class="cursor-pointer bg-blue-700 p-2 hover:bg-blue-500 text-white rounded-full">
-			Submit
-		</button>
 	</div>
 </template>
 
