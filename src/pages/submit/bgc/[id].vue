@@ -20,7 +20,7 @@
 
 					<div class="flex rounded-md shadow">
 						<router-link
-							class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md hover:bg-blue-500 bg-blue-700 px-3 text-white"
+							class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md hover:bg-blue-500 bg-blue-700 text-white"
 							to="/submit/locus"
 						>
 							AB0123456

@@ -25,7 +25,7 @@
 					name="cluster"
 					class="cursor-pointer"
 				/>
-				<label for="yes" class="label-checked:bg-blue-200">Yes</label>
+				<label for="yes">Yes</label>
 				<input
 					type="radio"
 					id=""
@@ -43,14 +43,14 @@
 					name="cluster"
 					class="cursor-pointer"
 				/>
-				<label for="unknown">Unknown</label>
+				<label for="unknown" class="label-checked:bg-blue-200">Unknown</label>
 			</div>
 		</div>
 		<div class="mt-8">
 			<div>
 				<span><h3>Evidence for locus-compound link :</h3></span>
 				<span
-					class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-white bg-blue-500 hover:bg-blue-700 rounded-full mb-2 py-2 px-4 mt-3"
+					class="inline-flex items-center justify-center mr-2 text-xs font-bold leading-none text-white bg-blue-500 hover:bg-blue-700 rounded-full mb-2 py-2 px-4 mt-3"
 					>Add :</span
 				>
 				<input
