@@ -1,0 +1,20 @@
+const ongoing = [
+  {
+    accession: "BGC0000536",
+    locus: "AB362350.1",
+    compound: "nisin Q",
+    status: "changes",
+  },
+  {
+    accession: "BGC2345678",
+    locus: "NC_234567.8",
+    compound: "Examplomycin B",
+    status: "waiting",
+  },
+  {
+    accession: "BGC3456789",
+    locus: "NC_345678.9",
+    compound: "Examplomycin C",
+    status: "assigned",
+  },
+];
