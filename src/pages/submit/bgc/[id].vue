@@ -101,33 +101,19 @@
 		data() {
 			return {
 				entry: null,
-				FAKE_DB: {
-					BGC0000536: {
-						changelog: '',
-						cluster: {
-							biosyn_class: ['RiPP'],
-							compounds: [
-								{
-									compound: 'nisin Q',
-								},
-							],
-							loci: {
-								accession: 'AB362350.1',
-								completeness: 'Unknown',
-							},
-							mibig_accession: 'BGC0000536',
-							minimal: true,
-							ncbi_tax_id: '1358',
-							organism_name: 'Lactococcus lactis',
-							publications: ['pubmed:19120645'],
-							ripp: {
-								subclass: 'Lanthipeptide',
-							},
-						},
-					},
-				},
 			};
 		},
+
+		mounted() {
+			fetch('http://localhost:6424/api/v1/prefill/new/abc' + this.id)
+				.then((res) => res.json())
+				.then((data) => {
+					this.ongoing = [data];
+					console.log(data);
+				})
+				.catch((err) => console.log(err.message));
+		},
+
 		watch: {
 			id: {
 				immediate: true,

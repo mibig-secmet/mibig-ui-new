@@ -76,7 +76,7 @@
 	import SubmissionStatus from '../../components/SubmissionStatus.vue';
 
 	export default {
-		props: ['acc'],
+		props: ['accession'],
 		data() {
 			return {
 				ongoing: null,
@@ -84,7 +84,7 @@
 		},
 
 		mounted() {
-			fetch('http://localhost:6424/api/v1/prefill/new/abc' + this.acc)
+			fetch('http://localhost:6424/api/v1/prefill/new/abc' + this.accession)
 				.then((res) => res.json())
 				.then((data) => {
 					this.ongoing = [data];
