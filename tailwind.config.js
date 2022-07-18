@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.vue'],
@@ -12,6 +14,9 @@ module.exports = {
         'yellow-warning': '#e9c46a',
         'orange-warning': '#f4a261',
         'red-error': '#e76f51',
+      },
+      fontFamily: {
+        'sans': ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
       },
     },
   },
