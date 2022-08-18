@@ -7,7 +7,8 @@
     <div class="col-span-1">
       <DetailedAnnotationBadge :minimal="entry.minimal" />
     </div>
-    <div class="col-span-5">{{ products }}</div>
+    <div class="col-span-1">{{ entry.status }}</div>
+    <div class="col-span-4">{{ products }}</div>
     <div class="col-span-2 flex flex-col justify-center">
       <BgcType v-for="tag in entry.classes" :key="tag.name" :tag="tag" />
     </div>

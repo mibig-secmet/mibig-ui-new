@@ -6,9 +6,6 @@
       <input id="filter" name="filter" v-model="filter" @input="resetLimit" type="text" placeholder="Filter"
         class="pr-3 pl-10 form-input rounded-lg border-blue-mibig-dark border-opacity-50 focus:border-opacity-100">
     </div>
-    <div>
-      {{ filter }}
-    </div>
   </div>
   <div>
     <div class="grid grid-cols-12 font-semibold border-b-2 border-blue-mibig-dark border-opacity-50">
@@ -27,7 +24,12 @@
         <component v-if="sortValue === 'minimal'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="main-product" @click="setSort" class="col-span-5 flex items-center">
+      <div id="status" @click="setSort" class="col-span-1 text-center flex items-center">
+        Status
+        <component v-if="sortValue === 'status'" class="w-4 h-4"
+          :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
+      </div>
+      <div id="main-product" @click="setSort" class="col-span-4 flex items-center">
         Main product
         <component v-if="sortValue === 'main-product'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
@@ -94,6 +96,7 @@ export default {
         if (arrayContains(entry.products, text)) return true;
         if (arrayContains(entry.classes, text)) return true;
         if (stringContains(entry.organism, text)) return true;
+        if (stringContains(entry.status, text)) return true;
 
       });
       return data;
@@ -106,6 +109,7 @@ export default {
         case "accession": sort_fn = (a, b) => sortString(a.accession, b.accession); break;
         case "complete": sort_fn = (a, b) => sortString(a.complete, b.complete); break;
         case "minimal": sort_fn = (a, b) => sortString(a.minimal, b.minimal); break;
+        case "status": sort_fn = (a, b) => sortString(a.status, b.status); break;
         case "main-product": sort_fn = (a, b) => sortNameArray(a.products, b.products); break;
         case "bgc-type": sort_fn = (a, b) => sortNameArray(a.classes, b.classes); break;
         case "organism": sort_fn = (a, b) => sortString(a.organism, b.organism); break;
