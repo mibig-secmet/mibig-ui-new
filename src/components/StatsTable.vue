@@ -4,7 +4,7 @@
       {{ title }}
       <small class="text-base font-normal text-gray-500">{{ subtitle }}</small>
     </h2>
-    <ul class="grid grid-cols-2 text-sm font-semibold">
+    <ul class="grid grid-cols-2 text-sm">
       <li
         :class="[
           'p-2',
@@ -14,7 +14,7 @@
           'flex',
           'items-center',
           'justify-between',
-          entry.single ? 'col-span-2 bg-gray-200' : '',
+          entry.single ? 'col-span-2 bg-gray-200 font-semibold' : '',
         ]"
         v-for="entry in records"
         :key="entry.description"
@@ -23,7 +23,7 @@
         <span
           :class="[
             badge
-              ? `text-xs rounded-xl px-1.5 py-0.5 ${entry.css_class? entry.css_class: 'text-gray-100 bg-gray-600'}`
+              ? `text-xs font-semibold rounded-xl px-1.5 py-0.5 ${entry.css_class? entry.css_class: 'text-gray-100 bg-gray-600'}`
               : 'text-blue-mibig',
           ]"
           >{{ entry.count }}</span
