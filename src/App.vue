@@ -58,9 +58,9 @@
         </div>
       </div>
       <div>
-        If you found MIBiG useful, please cite Kautsar, Blin, et al.
-        <i>Nucl. Acids. Res.</i> gkz882, doi:
-        <a class="text-blue-mibig" href="https://doi.org/10.1093/nar/gkz882">10.1093/nar/gkz882</a>.
+        If you found MIBiG useful, please cite Terlouw, Blin, et al.
+        <i>Nucl. Acids. Res.</i> gkac1049, doi:
+        <a class="text-blue-mibig" href="https://doi.org/10.1093/nar/gkac1049">10.1093/nar/gkac1049</a>.
       </div>
     </div>
     <div class="w-3/12">
