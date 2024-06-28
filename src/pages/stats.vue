@@ -23,12 +23,6 @@
       :records="record_count"
       :badge="true"
     />
-    <stats-table
-      title="Entries"
-      subtitle="by genus"
-      :records="taxon_count"
-      :badge="true"
-    />
   </div>
 </template>
 
@@ -45,15 +39,10 @@ export default {
           count: 0,
           single: true,
         },
-        { description: "Minimal entries", count: 0 },
-        { description: "Non-minimal entries", count: 0 },
         { description: "Complete entries", count: 0 },
-        { description: "Incomplete entries", count: 0 },
+        { description: "Partial entries", count: 0 },
       ],
       record_count: [
-        { description: "Loading...", count: 0 },
-      ],
-      taxon_count: [
         { description: "Loading...", count: 0 },
       ],
     };
@@ -64,14 +53,11 @@ export default {
       async handler() {
         const data = await this.fetchStats();
         this.general_stats[0].count = data.counts.total;
-        this.general_stats[1].count = data.counts.minimal;
-        this.general_stats[2].count = data.counts.total - data.counts.minimal;
-        this.general_stats[3].count = data.counts.complete;
-        this.general_stats[4].count = data.counts.incomplete;
+        this.general_stats[1].count = data.counts.complete;
+        this.general_stats[2].count = data.counts.partial;
 
         this.record_count = data.clusters;
 
-        this.taxon_count = data.taxon_stats.map((item)=> { return {description: item.genus, count: item.count} })
       }
     }
   },
