@@ -1,28 +1,17 @@
 <template>
   <div id="stats" class="mx-auto p-4 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
-    <h1
-      class="
+    <h1 class="
         py-6
         mb-4
         text-4xl
         font-semibold
         text-gray-800
         border-b border-gray-300
-      "
-    >
+      ">
       Statistics
     </h1>
-    <stats-table
-      title="General Statistics"
-      subtitle="database contains"
-      :records="general_stats"
-    />
-    <stats-table
-      title="Secondary Metabolite Record Count"
-      subtitle="by type"
-      :records="record_count"
-      :badge="true"
-    />
+    <stats-table title="General Statistics" subtitle="database contains" :records="general_stats" />
+    <stats-table title="Secondary Metabolite Record Count" subtitle="by type" :records="record_count" :badge="true" />
   </div>
 </template>
 
@@ -38,9 +27,13 @@ export default {
           description: "Total secondary metabolite clusters",
           count: 0,
           single: true,
+          highlight: true,
         },
         { description: "Complete entries", count: 0 },
         { description: "Partial entries", count: 0 },
+        { description: "Pending entries", count: 0 },
+        { description: "Retired entries", count: 0 },
+        { description: "Active entries", count: 0, single: true },
       ],
       record_count: [
         { description: "Loading...", count: 0 },
@@ -55,6 +48,9 @@ export default {
         this.general_stats[0].count = data.counts.total;
         this.general_stats[1].count = data.counts.complete;
         this.general_stats[2].count = data.counts.partial;
+        this.general_stats[3].count = data.counts.pending;
+        this.general_stats[4].count = data.counts.retired;
+        this.general_stats[5].count = data.counts.active;
 
         this.record_count = data.clusters;
 
@@ -62,7 +58,7 @@ export default {
     }
   },
   methods: {
-    async fetchStats(){
+    async fetchStats() {
       const raw = await fetch("/api/v1/stats");
       const data = await raw.json();
       return data;
