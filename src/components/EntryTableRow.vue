@@ -1,13 +1,13 @@
 <template>
-  <div @click.prevent="showEntry" class="grid grid-cols-12 items-center cursor-pointer" :class="bgClass">
+  <div @click.prevent="showEntry" class="grid grid-cols-12 items-center cursor-pointer text-black" :class="bgClass">
     <div class="col-span-1">{{ entry.accession }}</div>
     <div class="col-span-1">
-      <ClusterCompleteBadge :complete="entry.complete" />
-    </div>
-    <div class="col-span-1">
-      <DetailedAnnotationBadge :minimal="entry.minimal" />
+      <QualityBadge :quality="entry.quality" />
     </div>
     <div class="col-span-1">{{ entry.status }}</div>
+    <div class="col-span-1">
+      <ClusterCompleteBadge :completeness="entry.completeness" />
+    </div>
     <div class="col-span-4">{{ products }}</div>
     <div class="col-span-2 flex flex-col justify-center">
       <BgcType v-for="tag in entry.classes" :key="tag.name" :tag="tag" />
@@ -18,7 +18,7 @@
 
 <script>
 import ClusterCompleteBadge from './ClusterCompleteBadge.vue';
-import DetailedAnnotationBadge from './DetailedAnnotationBadge.vue';
+import QualityBadge from './QualityBadge.vue';
 import BgcType from './BgcType.vue';
 
 
@@ -30,14 +30,16 @@ export default {
   },
   components: {
     ClusterCompleteBadge,
-    DetailedAnnotationBadge,
+    QualityBadge,
     BgcType
   },
   computed: {
     bgClass() {
+      let muted = this.entry.status === 'retired' || this.entry.status === 'pending';
       return {
         'bg-white': this.idx % 2 == 0,
         'bg-gray-100': this.idx % 2 == 1,
+        'text-opacity-50': muted,
       }
     },
     products() {

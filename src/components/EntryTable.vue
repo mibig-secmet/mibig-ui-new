@@ -14,14 +14,9 @@
         <component v-if="sortValue === 'accession'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="complete" @click="setSort" class="col-span-1 text-center flex items-center">
-        Cluster complete
-        <component v-if="sortValue === 'complete'" class="w-4 h-4"
-          :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
-      </div>
-      <div id="minimal" @click="setSort" class="col-span-1 text-center flex items-center">
-        Detailed annotations
-        <component v-if="sortValue === 'minimal'" class="w-4 h-4"
+      <div id="quality" @click="setSort" class="col-span-1 text-center flex items-center">
+        Quality
+        <component v-if="sortValue === 'quality'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
       <div id="status" @click="setSort" class="col-span-1 text-center flex items-center">
@@ -29,13 +24,18 @@
         <component v-if="sortValue === 'status'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
+      <div id="completeness" @click="setSort" class="col-span-1 text-center flex items-center">
+        Completeness
+        <component v-if="sortValue === 'completeness'" class="w-4 h-4"
+          :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
+      </div>
       <div id="main-product" @click="setSort" class="col-span-4 flex items-center">
-        Main product
+        Main product(s)
         <component v-if="sortValue === 'main-product'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
       <div id="bgc-type" @click="setSort" class="col-span-2 flex items-center">
-        Biosynthetic class
+        Biosynthetic class(es)
         <component v-if="sortValue === 'bgc-type'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
@@ -63,6 +63,7 @@ const stringContains = (string, text) => {
 }
 
 const arrayContains = (array, text) => {
+  if (!array) return false;
   return array.some((element) => {
     return stringContains(element.name, text);
   });
@@ -97,6 +98,8 @@ export default {
         if (arrayContains(entry.classes, text)) return true;
         if (stringContains(entry.organism, text)) return true;
         if (stringContains(entry.status, text)) return true;
+        if (stringContains(entry.completeness, text)) return true;
+        if (stringContains(entry.quality, text)) return true;
 
       });
       return data;
@@ -107,8 +110,8 @@ export default {
 
       switch (this.sortValue) {
         case "accession": sort_fn = (a, b) => sortString(a.accession, b.accession); break;
-        case "complete": sort_fn = (a, b) => sortString(a.complete, b.complete); break;
-        case "minimal": sort_fn = (a, b) => sortString(a.minimal, b.minimal); break;
+        case "completeness": sort_fn = (a, b) => sortString(a.completeness, b.completeness); break;
+        case "quality": sort_fn = (a, b) => sortString(a.quality, b.quality); break;
         case "status": sort_fn = (a, b) => sortString(a.status, b.status); break;
         case "main-product": sort_fn = (a, b) => sortNameArray(a.products, b.products); break;
         case "bgc-type": sort_fn = (a, b) => sortNameArray(a.classes, b.classes); break;
@@ -191,5 +194,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
