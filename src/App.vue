@@ -87,6 +87,6 @@ const nav_targets = [
 //  { name: "Search", icon: SearchIcon, url: "/search" },
   { name: "Repository", icon: LibraryIcon, url: "/repository" },
   //{ name: "Submit", icon: PaperAirplaneIcon, url: "/submit" },
-  //{ name: "Download", icon: DownloadIcon, url: "/download" },
+  { name: "Download", icon: DownloadIcon, url: "/download" },
 ];
 </script>
