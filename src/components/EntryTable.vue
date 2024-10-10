@@ -77,6 +77,9 @@ const sortString = (a, b) => {
 }
 
 const sortName = (a, b) => {
+  if (a === undefined || b === undefined ){
+    return 0;
+  }
   return sortString(a.name, b.name);
 }
 
