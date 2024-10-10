@@ -8,38 +8,38 @@
     </div>
   </div>
   <div>
-    <div class="grid grid-cols-12 font-semibold border-b-2 border-blue-mibig-dark border-opacity-50">
-      <div id="accession" @click="setSort" class="col-span-1 flex items-center">
+    <div class="grid grid-cols-4 grid-flow-row-dense lg:grid-cols-6 2xl:grid-cols-12 font-semibold border-b-2 border-blue-mibig-dark border-opacity-50">
+      <div id="accession" @click="setSort" class="col-span-1 flex items-center overflow-auto">
         Accession
         <component v-if="sortValue === 'accession'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="quality" @click="setSort" class="col-span-1 text-center flex items-center">
+      <div id="quality" @click="setSort" class="col-span-1 text-center flex items-center overflow-auto">
         Quality
         <component v-if="sortValue === 'quality'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="status" @click="setSort" class="col-span-1 text-center flex items-center">
+      <div id="status" @click="setSort" class="col-span-1 text-center flex items-center overflow-auto">
         Status
         <component v-if="sortValue === 'status'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="completeness" @click="setSort" class="col-span-1 text-center flex items-center">
+      <div id="completeness" @click="setSort" class="col-span-1 text-center flex items-center overflow-auto">
         Completeness
         <component v-if="sortValue === 'completeness'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="main-product" @click="setSort" class="col-span-4 flex items-center">
+      <div id="main-product" @click="setSort" class="col-span-4 flex items-center overflow-auto">
         Main product(s)
         <component v-if="sortValue === 'main-product'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="bgc-type" @click="setSort" class="col-span-2 flex items-center">
+      <div id="bgc-type" @click="setSort" class="col-span-2 flex items-center overflow-auto">
         Biosynthetic class(es)
         <component v-if="sortValue === 'bgc-type'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />
       </div>
-      <div id="organism" @click="setSort" class="col-span-2 flex items-center">
+      <div id="organism" @click="setSort" class="col-span-2 flex items-center overflow-auto">
         Organism
         <component v-if="sortValue === 'organism'" class="w-4 h-4"
           :is="sortDirection > 0 ? 'ArrowNarrowUpIcon' : 'ArrowNarrowDownIcon'" />

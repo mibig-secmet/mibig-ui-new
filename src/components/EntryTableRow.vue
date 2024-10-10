@@ -1,5 +1,5 @@
 <template>
-  <div @click.prevent="showEntry" class="grid grid-cols-12 items-center cursor-pointer text-black" :class="bgClass">
+  <div @click.prevent="showEntry" class="grid grid-cols-4 grid-flow-row-dense lg:grid-cols-6 2xl:grid-cols-12 items-center cursor-pointer text-black" :class="bgClass">
     <div class="col-span-1">{{ entry.accession }}</div>
     <div class="col-span-1">
       <QualityBadge :quality="entry.quality" />
