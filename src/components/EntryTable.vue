@@ -119,6 +119,7 @@ export default {
         case "main-product": sort_fn = (a, b) => sortNameArray(a.products, b.products); break;
         case "bgc-type": sort_fn = (a, b) => sortNameArray(a.classes, b.classes); break;
         case "organism": sort_fn = (a, b) => sortString(a.organism, b.organism); break;
+        default: console.log("unexpected sort value", this.sortValue); return data;
       }
 
       return data.sort((a, b) => {
