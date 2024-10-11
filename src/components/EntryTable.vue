@@ -122,6 +122,9 @@ export default {
       }
 
       return data.sort((a, b) => {
+        if (a === undefined || b === undefined ){
+          return 0;
+        }
         const res = sort_fn(a, b);
         return res * this.sortDirection;
       });
