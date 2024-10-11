@@ -12,6 +12,7 @@
     </h1>
     <stats-table title="General Statistics" subtitle="database contains" :records="general_stats" />
     <stats-table title="Secondary Metabolite Record Count" subtitle="by type" :records="record_count" :badge="true" />
+    <stats-table title="Enntries" subtitle="by phylum" :records="taxon_count" :badge="true" />
   </div>
 </template>
 
@@ -39,6 +40,9 @@ export default {
       record_count: [
         { description: "Loading...", count: 0 },
       ],
+      taxon_count: [
+        { description: "Loading...", count: 0 },
+      ]
     };
   },
   watch: {
@@ -55,6 +59,8 @@ export default {
         this.general_stats[6].count = data.counts.partial;
 
         this.record_count = data.clusters;
+
+        this.taxon_count = data.phyla;
 
       }
     }
