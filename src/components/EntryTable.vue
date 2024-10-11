@@ -84,6 +84,9 @@ const sortName = (a, b) => {
 }
 
 const sortNameArray = (a, b) => {
+  if (a === null || b === null ){
+    return 0;
+  }
   const sorted_a = [...a].sort(sortName);
   const sorted_b = [...b].sort(sortName);
   return sortName(sorted_a[0], sorted_b[0]);
