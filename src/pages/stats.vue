@@ -12,7 +12,7 @@
     </h1>
     <stats-table title="General Statistics" subtitle="database contains" :records="general_stats" />
     <stats-table title="Secondary Metabolite Record Count" subtitle="by type" :records="record_count" :badge="true" />
-    <stats-table title="Enntries" subtitle="by phylum" :records="taxon_count" :badge="true" />
+    <stats-table title="Entries" subtitle="by phylum" :records="taxon_count" :badge="true" />
   </div>
 </template>
 
