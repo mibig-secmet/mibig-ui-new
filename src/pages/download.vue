@@ -18,8 +18,8 @@ import ReleaseEntry from "../components/ReleaseEntry.vue";
 
 const releases = [
   {
-    version: "4.0rc1",
-    date: "September 15, 2024",
+    version: "4.0",
+    date: "November 15, 2024",
   },
   {
     version: "3.1",
