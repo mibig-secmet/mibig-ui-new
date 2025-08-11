@@ -200,8 +200,9 @@ export default {
   },
   mounted() {
     this.loadMoreWhenIdle();
-  }
-}
+    this.filter = this.$route.query.filter || "";
+  },
+};
 </script>
 
 <style></style>
