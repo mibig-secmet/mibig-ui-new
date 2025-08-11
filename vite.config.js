@@ -11,12 +11,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:6424',
-      '/repository/': "http://localhost:6423",
-      '/go': {
-        target: "http://localhost:6423",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/go/, "/repository/")
-      },
+      '/repository/': "http://localhost:6424",
+      '/go': "http://localhost:6424",
     },
   },
 })
